@@ -8,9 +8,9 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
  console.log('Connected to MongoDB server')
  const db = client.db('TodoApp')
 
-/*
+ /*
  db.collection('Todos').insertOne({
-  text: 'Take a walk home',
+  text: 'Eaten Sunday Rice Today',
   completed: true
  }, (err, result) => {
   if (err) {
@@ -19,32 +19,32 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
   console.log(JSON.stringify(result.ops, undefined, 2))
  })
 
- Insert new doc into Users {name, age, location}
-
+  Insert new doc into Users {name, age, location}
+ 
+  
+   db.collection('Users').insertOne({
+    name: 'Emmanuel Madu',
+    age: 27,
+    location: 'Enugu, Nigeria.'
+   }, (err, result) => {
+    if (err) {
+     return console.log('Unable to insert Todo', err)
+    }
+    console.log(JSON.stringify(result.ops, undefined, 2))
+   })
+  
  
   db.collection('Users').insertOne({
-   name: 'Emmanuel Madu',
-   age: 27,
-   location: 'Enugu, Nigeria.'
+   name: 'Jasmine Egbuna',
+   age: 24,
+   location: 'Abuja, Nigeria.'
   }, (err, result) => {
    if (err) {
     return console.log('Unable to insert Todo', err)
    }
    console.log(JSON.stringify(result.ops, undefined, 2))
   })
- 
-
- db.collection('Users').insertOne({
-  name: 'Jasmine Egbuna',
-  age: 24,
-  location: 'Abuja, Nigeria.'
- }, (err, result) => {
-  if (err) {
-   return console.log('Unable to insert Todo', err)
-  }
-  console.log(JSON.stringify(result.ops, undefined, 2))
- })
-*/
+ */
 
  client.close()
 })
