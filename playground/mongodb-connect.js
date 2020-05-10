@@ -8,9 +8,10 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
  console.log('Connected to MongoDB server')
  const db = client.db('TodoApp')
 
- /*
+
+
  db.collection('Todos').insertOne({
-  text: 'Eaten Sunday Rice Today',
+  text: 'Eaten Sunday Today',
   completed: true
  }, (err, result) => {
   if (err) {
@@ -18,7 +19,7 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
   }
   console.log(JSON.stringify(result.ops, undefined, 2))
  })
-
+ /*
   Insert new doc into Users {name, age, location}
  
   
